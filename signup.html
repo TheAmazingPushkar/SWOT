@@ -11,7 +11,7 @@
         <h2>Create Account</h2>
         <p>Start your journey today</p>
         
-        <form action="login.html">
+        <form id="signup-form">
             <div class="input-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" placeholder="name@example.com" required>
@@ -23,9 +23,11 @@
             </div>
             
             <div class="input-group">
-                <label for="new-pass">Password</label>
+                <label for="password">Password</label>
                 <input type="password" id="new-pass" placeholder="Create a password" required>
             </div>
+             <input type ="password" id="confirm-password" placeholder="Confirm Password">
+    <p></p>
 
             <button type="submit" class="btn">Sign Up</button>
         </form>
@@ -36,4 +38,5 @@
     </div>
      <script type="module" src="main.js"></script>
 </body>
+
 </html>
