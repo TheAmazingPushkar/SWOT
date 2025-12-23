@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Matrix | SWOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><i class="fa-solid fa-layer-group"></i> <span>SWOT</span></div>
+                <a href="home.html" class="close-sidebar"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <nav class="nav-menu">
+                <a href="home.html" class="nav-item"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+                <a href="my-swot.html" class="nav-item active"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+                <a href="goals.html" class="nav-item"><i class="fa-solid fa-bullseye"></i> Goals</a>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+                <a href="journal.html" class="nav-item"><i class="fa-solid fa-book"></i> Journal</a>
+                <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title">My SWOT Analysis</h1>
+                <p class="page-subtitle">Be honest. Identify your internal and external factors.</p>
+            </header>
+
+            <div class="swot-grid-editor">
+                <div class="swot-box" style="background: var(--swot-s);">
+                    <h3 style="color: var(--swot-s-text);"><i class="fa-solid fa-bolt"></i> Strengths</h3>
+                    <textarea class="swot-textarea" placeholder="1. I am disciplined...&#10;2. I have good coding skills..."></textarea>
+                </div>
+                <div class="swot-box" style="background: var(--swot-w);">
+                    <h3 style="color: var(--swot-w-text);"><i class="fa-solid fa-link-slash"></i> Weaknesses</h3>
+                    <textarea class="swot-textarea" placeholder="1. I procrastinate on documentation...&#10;2. I get distracted by social media..."></textarea>
+                </div>
+                <div class="swot-box" style="background: var(--swot-o);">
+                    <h3 style="color: var(--swot-o-text);"><i class="fa-solid fa-lightbulb"></i> Opportunities</h3>
+                    <textarea class="swot-textarea" placeholder="1. AI market is booming...&#10;2. Hackathon next month..."></textarea>
+                </div>
+                <div class="swot-box" style="background: var(--swot-t);">
+                    <h3 style="color: var(--swot-t-text);"><i class="fa-solid fa-shield-halved"></i> Threats</h3>
+                    <textarea class="swot-textarea" placeholder="1. High competition in internships...&#10;2. Rapid technology changes..."></textarea>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

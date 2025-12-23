@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOT | Strategic Life Tracking</title>
+    <meta name="description" content="Track your life goals using the SWOT methodology.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-layer-group"></i></div>
+                SWOT
+            </a>
+            <div class="nav-links">
+                <a href="login.html" class="nav-item">Log In</a>
+                <a href="signup.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-content fade-in-up">
+                <span class="badge">v1.0 Public Release</span>
+                <h1>Strategize Your Life <br> Like a Business.</h1>
+                <p>Most goal apps are just checklists. SWOT helps you analyze your <strong>Strengths</strong> and <strong>Weaknesses</strong> to unlock real <strong>Opportunities</strong>.</p>
+                <div class="hero-buttons">
+                    <a href="signup.html" class="btn btn-primary btn-lg">Start Tracking Free</a>
+                    <a href="#features" class="btn btn-outline btn-lg">How it works</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual fade-in-up delay-200">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <div class="swot-matrix">
+                        <div class="quadrant s">
+                            <h4><i class="fa-solid fa-bolt"></i> Strengths</h4>
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line short"></div>
+                        </div>
+                        <div class="quadrant w">
+                            <h4><i class="fa-solid fa-link-slash"></i> Weaknesses</h4>
+                            <div class="skeleton-line"></div>
+                        </div>
+                        <div class="quadrant o">
+                            <h4><i class="fa-solid fa-lightbulb"></i> Opportunities</h4>
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line"></div>
+                        </div>
+                        <div class="quadrant t">
+                            <h4><i class="fa-solid fa-shield-halved"></i> Threats</h4>
+                            <div class="skeleton-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2>Why use the SWOT Framework?</h2>
+                <p>Turn self-awareness into actionable yearly data.</p>
+            </div>
+
+            <div class="grid-layout">
+                <div class="feature-card scroll-reveal">
+                    <div class="icon-box purple">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+                    <h3>Daily Journaling</h3>
+                    <p>Log daily wins and hurdles. The system categorizes them automatically into strengths or weaknesses.</p>
+                </div>
+
+                <div class="feature-card scroll-reveal delay-100">
+                    <div class="icon-box blue">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3>Yearly Analysis</h3>
+                    <p>Visualize your personal growth over 12 months with dynamic charts and progress bars.</p>
+                </div>
+
+                <div class="feature-card scroll-reveal delay-200">
+                    <div class="icon-box pink">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is encrypted. Your thoughts are personal, and we keep them that way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container cta-container scroll-reveal">
+            <h2>Ready to upgrade your mindset?</h2>
+            <p>Join other users tracking their life strategy today.</p>
+            <a href="signup.html" class="btn btn-white btn-lg">Create Free Account</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">SWOT</span>
+                <p>&copy; 2025 SWOT Inc. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Professional Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

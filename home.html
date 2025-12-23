@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | SWOT Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>SWOT</span>
+                </div>
+                <button class="close-sidebar" id="close-sidebar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <nav class="nav-menu">
+                <p class="nav-label">Main</p>
+                <a href="home.html" class="nav-item active">
+                    <i class="fa-solid fa-grid-2"></i> Dashboard
+                </a>
+                <a href="my-swot.html" class="nav-item">
+                    <i class="fa-solid fa-bolt"></i> My Matrix
+                </a>
+                <a href="goals.html" class="nav-item">
+                    <i class="fa-solid fa-bullseye"></i> Goals
+                </a>
+                
+                <p class="nav-label">Data</p>
+                <a href="analytics.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i> Analytics
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-box-archive"></i> Journal
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="settings.html" class="nav-item">
+                    <i class="fa-solid fa-gear"></i> Settings
+                </a>
+                <a href="index.html" class="nav-item logout-btn">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <div class="mobile-toggle">
+                    <button id="open-sidebar"><i class="fa-solid fa-bars"></i></button>
+                </div>
+
+                <div class="header-welcome">
+                    <h1 id="greeting">Welcome back, Simon</h1>
+                    <p id="current-date">Loading date...</p>
+                </div>
+
+                <div class="header-profile">
+                    <div class="notification-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge"></span>
+                    </div>
+                    <div class="profile-pic">
+                        <img src="https://ui-avatars.com/api/?name=Simon&background=4F46E5&color=fff&rounded=true" alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <div class="bento-grid">
+                
+                <div class="bento-card timer-card">
+                    <div class="card-top">
+                        <h3><i class="fa-solid fa-stopwatch"></i> Focus Mode</h3>
+                        <button class="icon-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    
+                    <div class="timer-circle-container">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring__bg" stroke="#ffffff30" stroke-width="6" fill="transparent" r="60" cx="70" cy="70"/>
+                            <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="6" fill="transparent" r="60" cx="70" cy="70"/>
+                        </svg>
+                        <div class="timer-text">
+                            <span id="minutes">25</span>:<span id="seconds">00</span>
+                        </div>
+                    </div>
+
+                    <div class="timer-controls">
+                        <button id="start-timer" class="btn btn-white">Start</button>
+                        <button id="reset-timer" class="btn btn-glass"><i class="fa-solid fa-rotate-right"></i></button>
+                    </div>
+                    <p class="timer-status">Ready to grind?</p>
+                </div>
+
+                <div class="bento-card quote-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <div class="quote-body">
+                        <p id="quote-text">"Loading your daily inspiration..."</p>
+                        <span id="quote-author"></span>
+                    </div>
+                    <button onclick="fetchNewQuote()" class="refresh-quote"><i class="fa-solid fa-arrows-rotate"></i> New Quote</button>
+                </div>
+
+                <div class="bento-card swot-card">
+                    <div class="card-top">
+                        <h3>Matrix Overview</h3>
+                        <a href="my-swot.html" class="link-text">Edit</a>
+                    </div>
+                    <div class="swot-mini-grid">
+                        <div class="mini-box s-box">
+                            <span class="count">4</span>
+                            <span class="label">Strengths</span>
+                        </div>
+                        <div class="mini-box w-box">
+                            <span class="count">2</span>
+                            <span class="label">Weaknesses</span>
+                        </div>
+                        <div class="mini-box o-box">
+                            <span class="count">5</span>
+                            <span class="label">Opportunities</span>
+                        </div>
+                        <div class="mini-box t-box">
+                            <span class="count">1</span>
+                            <span class="label">Threats</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card goals-card">
+                    <div class="card-top">
+                        <h3>Today's Targets</h3>
+                        <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <ul class="goal-list">
+                        <li>
+                            <input type="checkbox" id="g1">
+                            <label for="g1">Complete Django Views</label>
+                            <span class="tag high">High</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="g2">
+                            <label for="g2">Workout (Leg Day)</label>
+                            <span class="tag med">Med</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="g3" checked>
+                            <label for="g3">Read "Atomic Habits"</label>
+                            <span class="tag low">Low</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bento-card chart-card">
+                    <div class="card-top">
+                        <h3>Productivity Trend</h3>
+                        <span class="trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +12%</span>
+                    </div>
+                    <div class="css-chart">
+                        <div class="bar" style="height: 40%;" title="Mon"></div>
+                        <div class="bar" style="height: 70%;" title="Tue"></div>
+                        <div class="bar" style="height: 50%;" title="Wed"></div>
+                        <div class="bar" style="height: 90%;" title="Thu"></div>
+                        <div class="bar" style="height: 60%;" title="Fri"></div>
+                        <div class="bar active" style="height: 85%;" title="Sat"></div>
+                        <div class="bar" style="height: 40%;" title="Sun"></div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <audio id="timer-sound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+
+    
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. Date & Greeting Logic ---
+            const dateEl = document.getElementById('current-date');
+            const greetingEl = document.getElementById('greeting');
+            const now = new Date();
+            
+            dateEl.textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+
+            const hour = now.getHours();
+            let greetText = "Good Evening";
+            if(hour < 12) greetText = "Good Morning";
+            else if(hour < 18) greetText = "Good Afternoon";
+            greetingEl.textContent = `${greetText}, Simon`;
+
+            // --- 2. Mobile Sidebar Logic ---
+            const sidebar = document.getElementById('sidebar');
+            const openBtn = document.getElementById('open-sidebar');
+            const closeBtn = document.getElementById('close-sidebar');
+
+            openBtn.addEventListener('click', () => { sidebar.classList.add('active'); });
+            closeBtn.addEventListener('click', () => { sidebar.classList.remove('active'); });
+
+            // --- 3. Pomodoro Timer Logic (FULLY FUNCTIONAL) ---
+            let timeLeft = 25 * 60;
+            let timerInterval = null;
+            let isRunning = false;
+            
+            const minEl = document.getElementById('minutes');
+            const secEl = document.getElementById('seconds');
+            const startBtn = document.getElementById('start-timer');
+            const resetBtn = document.getElementById('reset-timer');
+            const statusText = document.querySelector('.timer-status');
+            const circle = document.querySelector('.progress-ring__circle');
+            const radius = circle.r.baseVal.value;
+            const circumference = radius * 2 * Math.PI;
+
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            circle.style.strokeDashoffset = circumference;
+
+            function setProgress(percent) {
+                const offset = circumference - (percent / 100) * circumference;
+                circle.style.strokeDashoffset = offset;
+            }
+
+            function updateTimerDisplay() {
+                const m = Math.floor(timeLeft / 60);
+                const s = timeLeft % 60;
+                minEl.textContent = m.toString().padStart(2, '0');
+                secEl.textContent = s.toString().padStart(2, '0');
+                
+                const totalTime = 25 * 60;
+                const percent = ((totalTime - timeLeft) / totalTime) * 100;
+                setProgress(percent);
+            }
+
+            startBtn.addEventListener('click', () => {
+                if(isRunning) {
+                    clearInterval(timerInterval);
+                    startBtn.textContent = "Start";
+                    statusText.textContent = "Timer Paused";
+                    isRunning = false;
+                } else {
+                    startBtn.textContent = "Pause";
+                    statusText.textContent = "Stay Focused!";
+                    isRunning = true;
+                    timerInterval = setInterval(() => {
+                        if(timeLeft > 0) {
+                            timeLeft--;
+                            updateTimerDisplay();
+                        } else {
+                            clearInterval(timerInterval);
+                            document.getElementById('timer-sound').play();
+                            statusText.textContent = "Time's Up!";
+                            isRunning = false;
+                        }
+                    }, 1000);
+                }
+            });
+
+            resetBtn.addEventListener('click', () => {
+                clearInterval(timerInterval);
+                timeLeft = 25 * 60;
+                isRunning = false;
+                startBtn.textContent = "Start";
+                statusText.textContent = "Ready to grind?";
+                updateTimerDisplay();
+                setProgress(0);
+            });
+
+            // --- 4. Quote API Logic (FULLY FUNCTIONAL) ---
+            window.fetchNewQuote = async () => {
+                const textEl = document.getElementById('quote-text');
+                const authorEl = document.getElementById('quote-author');
+                textEl.style.opacity = 0; 
+                
+                try {
+                    const res = await fetch('https://api.quotable.io/random?tags=technology,success');
+                    const data = await res.json();
+                    setTimeout(() => {
+                        textEl.textContent = `"${data.content}"`;
+                        authorEl.textContent = `- ${data.author}`;
+                        textEl.style.opacity = 1; 
+                    }, 300);
+                } catch (e) {
+                    textEl.textContent = "\"The only way to do great work is to love what you do.\"";
+                    authorEl.textContent = "- Steve Jobs";
+                    textEl.style.opacity = 1;
+                }
+            };
+            fetchNewQuote();
+
+            // --- 5. "ADD GOAL" Logic (NOW FUNCTIONAL) ---
+            // This allows the + button to actually add items to the list immediately
+            const addGoalBtn = document.querySelector('.add-btn');
+            const goalList = document.querySelector('.goal-list');
+
+            addGoalBtn.addEventListener('click', () => {
+                // Simple prompt to get user input (In real app, this would be a modal)
+                const goalText = prompt("Enter your new daily goal:");
+                
+                if (goalText) {
+                    const li = document.createElement('li');
+                    // Create unique ID for checkbox
+                    const id = 'new-g-' + Date.now();
+                    
+                    li.innerHTML = `
+                        <input type="checkbox" id="${id}">
+                        <label for="${id}">${goalText}</label>
+                        <span class="tag med">New</span>
+                    `;
+                    // Add animation class
+                    li.style.animation = "fadeIn 0.5s ease";
+                    goalList.prepend(li); // Add to top of list
+                }
+            });
+
+            // --- 6. "Settings/Menu" Buttons (FEEDBACK ONLY) ---
+            // These buttons (ellipsis ...) don't have pages yet, so we give feedback
+            const iconBtns = document.querySelectorAll('.icon-btn');
+            iconBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    alert("Settings menu coming in Module 2 (Backend Integration)!");
+                });
+            });
+
+            // --- 7. Checkbox Sound Effect ---
+            // Adds a satisfying 'click' feel when finishing a task
+            goalList.addEventListener('change', (e) => {
+                if(e.target.type === 'checkbox' && e.target.checked) {
+                    // Visual feedback logic could go here
+                    console.log("Task completed!"); 
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

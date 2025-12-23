@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | SWOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header"><div class="logo"><i class="fa-solid fa-layer-group"></i> <span>SWOT</span></div></div>
+            <nav class="nav-menu">
+                <a href="home.html" class="nav-item"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+                <a href="my-swot.html" class="nav-item"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+                <a href="goals.html" class="nav-item"><i class="fa-solid fa-bullseye"></i> Goals</a>
+                <a href="analytics.html" class="nav-item active"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+                <a href="journal.html" class="nav-item"><i class="fa-solid fa-book"></i> Journal</a>
+                <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title">Life Analytics</h1>
+            </header>
+
+            <div class="analytics-grid">
+                <div class="chart-container">
+                    <canvas id="productivityChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="swotRadar"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Productivity Line Chart
+        const ctx1 = document.getElementById('productivityChart');
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Tasks Completed',
+                    data: [5, 8, 3, 12, 6, 9, 4], // This is the dummy data
+                    borderColor: '#4F46E5',
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(79, 70, 229, 0.1)'
+                }]
+            },
+            options: { maintainAspectRatio: false, plugins: { title: { display: true, text: 'Productivity Trend (Last 7 Days)' } } }
+        });
+
+        // SWOT Radar Chart
+        const ctx2 = document.getElementById('swotRadar');
+        new Chart(ctx2, {
+            type: 'radar',
+            data: {
+                labels: ['Strengths', 'Weaknesses', 'Opportunities', 'Threats'],
+                datasets: [{
+                    label: 'Focus Distribution',
+                    data: [8, 5, 9, 4],
+                    backgroundColor: 'rgba(236, 72, 153, 0.2)',
+                    borderColor: '#EC4899',
+                }]
+            },
+            options: { maintainAspectRatio: false }
+        });
+    </script>
+</body>
+</html>

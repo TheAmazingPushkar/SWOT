@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals | SWOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header"><div class="logo"><i class="fa-solid fa-layer-group"></i> <span>SWOT</span></div></div>
+            <nav class="nav-menu">
+                <a href="home.html" class="nav-item"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+                <a href="my-swot.html" class="nav-item"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+                <a href="goals.html" class="nav-item active"><i class="fa-solid fa-bullseye"></i> Goals</a>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+                <a href="journal.html" class="nav-item"><i class="fa-solid fa-book"></i> Journal</a>
+                <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title">Strategic Goals</h1>
+                <p class="page-subtitle">Turn your opportunities into action.</p>
+            </header>
+
+            <div class="goals-container">
+                <div class="bento-card" style="height: auto;">
+                    <div class="card-top">
+                        <h3>Daily Operations</h3>
+                        <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <ul class="goal-list">
+                        <li><input type="checkbox" id="g1"><label for="g1">Code for 2 hours</label><span class="tag high">High</span></li>
+                        <li><input type="checkbox" id="g2"><label for="g2">Read 20 pages</label><span class="tag med">Med</span></li>
+                        <li><input type="checkbox" id="g3"><label for="g3">Drink 3L Water</label><span class="tag low">Low</span></li>
+                    </ul>
+                </div>
+
+                <div class="progress-section">
+                    <h3 style="margin-bottom: 20px;">2025 Vision Board</h3>
+                    
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Full Stack Mastery</span><span>75%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
+                    </div>
+                    
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Investment Portfolio</span><span>30%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 30%; background: #EF4444;"></div></div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Physical Health</span><span>60%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 60%; background: #10B981;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
