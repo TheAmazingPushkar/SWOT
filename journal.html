@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal | SWOT</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header"><div class="logo"><i class="fa-solid fa-layer-group"></i> <span>SWOT</span></div></div>
+            <nav class="nav-menu">
+                <p class="nav-label">Main</p>
+                <a href="home.html" class="nav-item"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+                <a href="my-swot.html" class="nav-item"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+                <a href="goals.html" class="nav-item"><i class="fa-solid fa-bullseye"></i> Goals</a>
+                <a href="focus.html" class="nav-item"><i class="fa-solid fa-hourglass-half"></i> Focus</a>
+                <a href="resources.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Resources</a>
+                <a href="planner.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Planner</a>
+                <p class="nav-label">Data</p>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+                <a href="journal.html" class="nav-item active"><i class="fa-solid fa-book"></i> Journal</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title">Daily Journal</h1>
+            </header>
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>Capture insights, not just tasks</h2>
+                    <p>Short daily reflections and mood tracking help reveal patterns that boost growth.</p>
+                </div>
+                <div class="hero-image"><img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8a6b7a1d2e3f4a5b6c7d8e9f0a1b2c3d" alt="journal"></div>
+            </div>
+
+            <div class="bento-card" style="height: auto;">
+                <div class="form-group">
+                    <label>Today's Title</label>
+                    <input id="journal-title" type="text" class="form-input" placeholder="e.g., A breakthrough in coding...">
+                </div>
+                <div class="form-group">
+                    <label>Entry</label>
+                    <textarea id="journal-body" class="form-textarea" placeholder="Write your thoughts here..."></textarea>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px">
+                    <label style="color:var(--muted);font-weight:700">Mood</label>
+                    <select id="journal-mood" class="form-input" style="width:auto;padding:8px 10px">
+                        <option value="happy">😊 Happy</option>
+                        <option value="neutral">😐 Neutral</option>
+                        <option value="sad">😔 Sad</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary save-entry">Save Entry</button>
+            </div>
+
+            <h3 style="margin-top:18px">Recent Entries</h3>
+            <div id="journal-list" class="journal-list"></div>
+            <script src="home.js"></script>
+        </main>
+    </div>
+</body>
+</html>

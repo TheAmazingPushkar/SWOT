@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planner | SWOT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="app-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-header"><div class="logo"><i class="fa-solid fa-layer-group"></i> <span>SWOT</span></div></div>
+      <nav class="nav-menu">
+        <p class="nav-label">Main</p>
+        <a href="home.html" class="nav-item"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+        <a href="my-swot.html" class="nav-item"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+        <a href="planner.html" class="nav-item active"><i class="fa-solid fa-calendar-check"></i> Planner</a>
+        <a href="focus.html" class="nav-item"><i class="fa-solid fa-hourglass-half"></i> Focus</a>
+        <a href="resources.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Resources</a>
+        <a href="goals.html" class="nav-item"><i class="fa-solid fa-bullseye"></i> Goals</a>
+        <p class="nav-label">Data</p>
+        <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+        <a href="journal.html" class="nav-item"><i class="fa-solid fa-book"></i> Journal</a>
+        <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title">Daily Planner</h1>
+        <p class="page-subtitle">Organize your day — tasks, priorities and quick wins.</p>
+      </header>
+
+      <div class="hero">
+        <div class="hero-content">
+          <h2>Plan your day with intention</h2>
+          <p>Add tasks, set priorities, and mark quick wins — built for focus and momentum.</p>
+        </div>
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f3d5a1e9b6a1b9b6a5c4d3e2f1a0b9c" alt="planner"></div>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4>Quick Add Task</h4>
+          <p>Add tasks rapidly and assign a priority tag.</p>
+          <div style="margin-top:12px" class="swot-input"><input id="task-input" placeholder="Try: Write README" /><button id="task-add" class="btn btn-primary">Add Task</button></div>
+        </div>
+        <div class="feature-card">
+          <h4>Today's Focus</h4>
+          <p>Set 1-3 focus tasks for the day to avoid context switching.</p>
+          <div style="margin-top:12px"><button id="promote-focus" class="btn">Promote Selected</button></div>
+        </div>
+        <div class="feature-card">
+          <h4>Smart Suggestions</h4>
+          <p>Get suggestions from recent journal entries and goals.</p>
+        </div>
+      </div>
+
+      <div class="bento-card" style="margin-top:18px;">
+        <div class="card-top"><h3>Tasks</h3><div class="card-actions"><button id="clear-completed" class="btn">Clear Done</button></div></div>
+        <ul id="task-list" class="goal-list" style="margin-top:8px;"></ul>
+      </div>
+
+    </main>
+  </div>
+  <script src="home.js"></script>
+</body>
+</html>

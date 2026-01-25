@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Matrix | SWOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="app-wrapper">
+            <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><i class="fa-solid fa-layer-group"></i> <span>SWOT</span></div>
+                <a href="home.html" class="close-sidebar"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <nav class="nav-menu">
+                <p class="nav-label">Main</p>
+                <a href="home.html" class="nav-item"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+                <a href="my-swot.html" class="nav-item active"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+                <a href="planner.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Planner</a>
+                <a href="focus.html" class="nav-item"><i class="fa-solid fa-hourglass-half"></i> Focus</a>
+                <a href="resources.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Resources</a>
+                <a href="goals.html" class="nav-item"><i class="fa-solid fa-bullseye"></i> Goals</a>
+                <p class="nav-label">Data</p>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+                <a href="journal.html" class="nav-item"><i class="fa-solid fa-book"></i> Journal</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title">My SWOT Analysis</h1>
+                <p class="page-subtitle">Be honest. Identify your internal and external factors.</p>
+            </header>
+
+            <div class="swot-toolbar" style="justify-content:space-between">
+                <div style="display:flex;gap:12px;align-items:center">
+                    <div class="metric" style="min-width:140px"><div class="value" id="swot-total">0</div><div class="label">Total Items</div></div>
+                    <div class="metric" style="min-width:140px"><div class="value" id="swot-highlight">0</div><div class="label">Highlights</div></div>
+                    <div class="metric" style="min-width:140px"><div class="value" id="swot-priority">0</div><div class="label">Priorities</div></div>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center">
+                    <button class="btn" id="swot-export">Export</button>
+                    <button class="btn" id="swot-import">Import</button>
+                    <button class="btn" id="swot-clear">Clear All</button>
+                </div>
+            </div>
+
+            <div class="swot-grid-editor">
+                <div class="swot-column" data-col="strengths">
+                    <div class="swot-header">
+                        <div class="swot-title"><i class="fa-solid fa-bolt" style="color:var(--primary-start)"></i> <span>Strengths</span></div>
+                        <div class="swot-count" id="count-strengths">0</div>
+                    </div>
+                    <div class="swot-input"><input placeholder="Add strength..." data-col="strengths" class="swot-add"><button data-col="strengths" class="swot-add-btn">Add</button></div>
+                    <ul class="swot-list" id="list-strengths"></ul>
+                </div>
+
+                <div class="swot-column" data-col="weaknesses">
+                    <div class="swot-header">
+                        <div class="swot-title"><i class="fa-solid fa-link-slash" style="color:#EF4444"></i> <span>Weaknesses</span></div>
+                        <div class="swot-count" id="count-weaknesses">0</div>
+                    </div>
+                    <div class="swot-input"><input placeholder="Add weakness..." data-col="weaknesses" class="swot-add"><button data-col="weaknesses" class="swot-add-btn">Add</button></div>
+                    <ul class="swot-list" id="list-weaknesses"></ul>
+                </div>
+
+                <div class="swot-column" data-col="opportunities">
+                    <div class="swot-header">
+                        <div class="swot-title"><i class="fa-solid fa-lightbulb" style="color:var(--swot-o-text)"></i> <span>Opportunities</span></div>
+                        <div class="swot-count" id="count-opportunities">0</div>
+                    </div>
+                    <div class="swot-input"><input placeholder="Add opportunity..." data-col="opportunities" class="swot-add"><button data-col="opportunities" class="swot-add-btn">Add</button></div>
+                    <ul class="swot-list" id="list-opportunities"></ul>
+                </div>
+
+                <div class="swot-column" data-col="threats">
+                    <div class="swot-header">
+                        <div class="swot-title"><i class="fa-solid fa-shield-halved" style="color:var(--swot-t-text)"></i> <span>Threats</span></div>
+                        <div class="swot-count" id="count-threats">0</div>
+                    </div>
+                    <div class="swot-input"><input placeholder="Add threat..." data-col="threats" class="swot-add"><button data-col="threats" class="swot-add-btn">Add</button></div>
+                    <ul class="swot-list" id="list-threats"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+    <script src="home.js"></script>
+</html>
+
+</html>

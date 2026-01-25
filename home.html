@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | SWOT Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>SWOT</span>
+                </div>
+                <button class="close-sidebar" id="close-sidebar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <nav class="nav-menu">
+                <p class="nav-label">Main</p>
+                <a href="home.html" class="nav-item active"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+                <a href="my-swot.html" class="nav-item"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+                <a href="planner.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Planner</a>
+                <a href="focus.html" class="nav-item"><i class="fa-solid fa-hourglass-half"></i> Focus</a>
+                <a href="resources.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Resources</a>
+                <a href="goals.html" class="nav-item"><i class="fa-solid fa-bullseye"></i> Goals</a>
+                <p class="nav-label">Data</p>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+                <a href="journal.html" class="nav-item"><i class="fa-solid fa-book"></i> Journal</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="settings.html" class="nav-item">
+                    <i class="fa-solid fa-gear"></i> Settings
+                </a>
+                     <a href="index.html" class="nav-item" id="logout-btn">
+                    <i class="fa-solid fa-arrow-right-from-bracket" id="logout-btn"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <div class="mobile-toggle">
+                    <button id="open-sidebar"><i class="fa-solid fa-bars"></i></button>
+                </div>
+
+                <div class="header-welcome">
+                    <h1 id="greeting">Welcome back, Simon</h1>
+                    <p id="current-date">Loading date...</p>
+                </div>
+
+                <div class="header-profile">
+                    <div class="notification-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge"></span>
+                    </div>
+                    <div class="growth-summary" aria-hidden="false">
+                        <div class="stat">
+                            <span id="sessions-count">0</span>
+                            <small>Sessions</small>
+                        </div>
+                        <div class="stat">
+                            <span id="tasks-completed">0</span>
+                            <small>Tasks</small>
+                        </div>
+                        <div class="stat">
+                            <span id="productivity-score">0</span>
+                            <small>Score</small>
+                        </div>
+                    </div>
+                    <div class="profile-pic" id="profile-pic" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://ui-avatars.com/api/?name=Simon&background=4F46E5&color=fff&rounded=true" alt="Profile">
+                        <div class="profile-menu" id="profile-menu" aria-hidden="true">
+                            <div class="profile-card">
+                                <div class="profile-card-row">
+                                    <img src="https://ui-avatars.com/api/?name=Simon&background=4F46E5&color=fff&rounded=true" alt="avatar" />
+                                    <div style="margin-left:10px">
+                                        <div style="font-weight:800">Simon</div>
+                                        <div style="color:var(--muted);font-size:12px">simon@example.com</div>
+                                    </div>
+                                </div>
+                                <div class="profile-actions">
+                                    <button class="btn btn-ghost" id="profile-view">View Profile</button>
+                                    <button class="btn btn-ghost" id="profile-settings">Settings</button>
+                                    <button class="btn btn-ghost" id="profile-logout">Logout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="bento-grid">
+                
+                <div class="bento-card timer-card">
+                    <div class="card-top">
+                        <h3><i class="fa-solid fa-stopwatch"></i> Focus Mode</h3>
+                        <button class="icon-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    
+                    <div class="timer-circle-container">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring__bg" stroke="#ffffff30" stroke-width="6" fill="transparent" r="60" cx="70" cy="70"/>
+                            <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="6" fill="transparent" r="60" cx="70" cy="70"/>
+                        </svg>
+                        <div class="timer-text">
+                            <span id="minutes">25</span>:<span id="seconds">00</span>
+                        </div>
+                    </div>
+
+                    <div class="timer-controls">
+                        <button id="start-timer" class="btn btn-white">Start</button>
+                        <button id="reset-timer" class="btn btn-glass"><i class="fa-solid fa-rotate-right"></i></button>
+                    </div>
+                    <p class="timer-status">Ready to grind?</p>
+                </div>
+
+                <div class="bento-card quote-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <div class="quote-body">
+                        <p id="quote-text">"Loading your daily inspiration..."</p>
+                        <span id="quote-author"></span>
+                    </div>
+                    <button onclick="fetchNewQuote()" class="refresh-quote"><i class="fa-solid fa-arrows-rotate"></i> New Quote</button>
+                </div>
+
+                <div class="bento-card swot-card">
+                    <div class="card-top">
+                        <h3>Matrix Overview</h3>
+                        <a href="my-swot.html" class="link-text">Edit</a>
+                    </div>
+                    <div class="swot-mini-grid">
+                        <div class="mini-box s-box">
+                            <span class="count">4</span>
+                            <span class="label">Strengths</span>
+                        </div>
+                        <div class="mini-box w-box">
+                            <span class="count">2</span>
+                            <span class="label">Weaknesses</span>
+                        </div>
+                        <div class="mini-box o-box">
+                            <span class="count">5</span>
+                            <span class="label">Opportunities</span>
+                        </div>
+                        <div class="mini-box t-box">
+                            <span class="count">1</span>
+                            <span class="label">Threats</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card goals-card">
+                    <div class="card-top">
+                        <h3>Today's Targets</h3>
+                        <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <ul class="goal-list">
+                        <li>
+                            <input type="checkbox" id="g1">
+                            <label for="g1">Complete Django Views</label>
+                            <span class="tag high">High</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="g2">
+                            <label for="g2">Workout (Leg Day)</label>
+                            <span class="tag med">Med</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="g3" checked>
+                            <label for="g3">Read "Atomic Habits"</label>
+                            <span class="tag low">Low</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bento-card chart-card">
+                    <div class="card-top">
+                        <h3>Productivity Trend</h3>
+                        <span class="trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +12%</span>
+                    </div>
+                    <div class="css-chart">
+                        <div class="bar" style="height: 40%;" title="Mon"></div>
+                        <div class="bar" style="height: 70%;" title="Tue"></div>
+                        <div class="bar" style="height: 50%;" title="Wed"></div>
+                        <div class="bar" style="height: 90%;" title="Thu"></div>
+                        <div class="bar" style="height: 60%;" title="Fri"></div>
+                        <div class="bar active" style="height: 85%;" title="Sat"></div>
+                        <div class="bar" style="height: 40%;" title="Sun"></div>
+                    </div>
+                </div>
+
+                <!-- New Growth & Awareness Cards -->
+                <div class="bento-card" id="habit-card">
+                    <div class="card-top">
+                        <h3><i class="fa-solid fa-fire"></i> Habit Streak</h3>
+                        <button class="icon-btn" id="reset-streak"><i class="fa-solid fa-rotate"></i></button>
+                    </div>
+                    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;flex:1">
+                        <div style="font-size:32px;font-weight:900" id="streak-count">0</div>
+                        <div style="color:var(--muted)">days streak</div>
+                        <button id="complete-habit" class="btn btn-primary" style="margin-top:8px">Mark Done Today</button>
+                    </div>
+                </div>
+
+                <div class="bento-card" id="learning-card">
+                    <div class="card-top">
+                        <h3><i class="fa-solid fa-book-open"></i> Learning Minutes</h3>
+                        <button class="icon-btn" id="add-15"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;flex:1">
+                        <div style="font-size:28px;font-weight:800" id="learn-min">0</div>
+                        <div style="color:var(--muted)">minutes this week</div>
+                        <div style="display:flex;gap:8px;margin-top:8px">
+                            <button id="add-5" class="btn btn-ghost">+5</button>
+                            <button id="add-15" class="btn btn-primary">+15</button>
+                            <button id="add-30" class="btn btn-primary">+30</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card" id="mood-card">
+                    <div class="card-top">
+                        <h3><i class="fa-solid fa-face-smile"></i> Mood Snapshot</h3>
+                        <button class="icon-btn" id="view-mood-history"><i class="fa-solid fa-clock-rotate-left"></i></button>
+                    </div>
+                    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;flex:1">
+                        <div style="font-size:20px;color:var(--muted)">How are you feeling?</div>
+                        <div style="display:flex;gap:10px">
+                            <button class="mood-btn" data-mood="happy">😊</button>
+                            <button class="mood-btn" data-mood="neutral">😐</button>
+                            <button class="mood-btn" data-mood="sad">😔</button>
+                        </div>
+                        <div id="mood-last" style="color:var(--muted);font-size:13px;margin-top:6px">No recent mood</div>
+                    </div>
+                </div>
+
+                <div class="bento-card" id="reflect-card">
+                    <div class="card-top">
+                        <h3><i class="fa-solid fa-pen-fancy"></i> Quick Reflection</h3>
+                        <button class="icon-btn" id="open-reflect"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:8px;flex:1">
+                        <textarea id="quick-reflect" placeholder="One sentence: What went well?" style="width:100%;background:transparent;border:1px solid rgba(255,255,255,0.03);padding:10px;border-radius:8px;color:var(--text)"></textarea>
+                        <div style="display:flex;justify-content:flex-end;gap:8px">
+                            <button id="save-reflect" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card" id="resources-card">
+                    <div class="card-top">
+                        <h3><i class="fa-solid fa-link"></i> Resources</h3>
+                        <a class="link-text" href="https://www.coursera.org" target="_blank">Learn</a>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:8px">
+                        <a href="https://www.coursera.org" target="_blank" class="link-text">Recommended Course: Deep Work</a>
+                        <a href="https://www.readwise.io" target="_blank" class="link-text">Reading Highlights</a>
+                        <a href="https://www.productivityist.com" target="_blank" class="link-text">Productivity Tips</a>
+                    </div>
+                </div>
+                
+                <div class="bento-card" id="playlist-card">
+                    <div class="card-top">
+                        <h3><i class="fa-solid fa-music"></i> Focus Playlist</h3>
+                        <a class="link-text" href="https://open.spotify.com" target="_blank">Open</a>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                        <div style="display:flex;gap:12px;align-items:center">
+                            <div style="width:64px;height:64px;border-radius:8px;overflow:hidden;flex-shrink:0">
+                                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=5e6d6e2f1a3b4c5d6e7f8a9b0c1d2e3f" style="width:100%;height:100%;object-fit:cover" alt="playlist">
+                            </div>
+                            <div>
+                                <div style="font-weight:800">Lo-Fi Focus Mix</div>
+                                <div style="color:var(--muted);font-size:13px">45 min • instrumental</div>
+                            </div>
+                        </div>
+
+                        <ul style="list-style:none;padding-left:0;margin:0;color:var(--muted)">
+                            <li>1. Morning Flow — 10m</li>
+                            <li>2. Deep Work — 20m</li>
+                            <li>3. Wind Down — 15m</li>
+                        </ul>
+
+                        <div style="display:flex;justify-content:flex-end">
+                            <a class="btn btn-primary" href="https://open.spotify.com" target="_blank">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <audio id="timer-sound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+    
+    <!-- Modals (simple) -->
+    <div id="goal-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <h3>Add Goal</h3>
+        <input id="goal-input" placeholder="Describe your goal" />
+        <div class="modal-actions">
+          <button id="goal-cancel" class="btn btn-ghost">Cancel</button>
+          <button id="goal-save" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="settings-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <h3>Settings</h3>
+        <p>Settings are coming soon. For now you can customize goals and track sessions.</p>
+        <div class="modal-actions">
+          <button id="settings-close" class="btn btn-primary">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="home.js"></script>
+    
+</body>
+
+</html>

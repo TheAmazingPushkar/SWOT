@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals | SWOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="app-wrapper">
+            <aside class="sidebar">
+            <div class="sidebar-header"><div class="logo"><i class="fa-solid fa-layer-group"></i> <span>SWOT</span></div></div>
+            <nav class="nav-menu">
+                <p class="nav-label">Main</p>
+                <a href="home.html" class="nav-item"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+                <a href="my-swot.html" class="nav-item"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+                <a href="planner.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Planner</a>
+                <a href="focus.html" class="nav-item"><i class="fa-solid fa-hourglass-half"></i> Focus</a>
+                <a href="resources.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Resources</a>
+                <a href="goals.html" class="nav-item active"><i class="fa-solid fa-bullseye"></i> Goals</a>
+                <p class="nav-label">Data</p>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+                <a href="journal.html" class="nav-item"><i class="fa-solid fa-book"></i> Journal</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title">Strategic Goals</h1>
+                <p class="page-subtitle">Turn your opportunities into action.</p>
+            </header>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>Goals that move you forward</h2>
+                    <p>Create measurable goals, track progress, and celebrate momentum.</p>
+                </div>
+                <div class="hero-image"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f3d5a1e9b6a1b9b6a5c4d3e2f1a0b9c" alt="goals"></div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Create a Goal</h4>
+                    <p>Use the + button to add a new goal. Tag it with priority and track progress daily.</p>
+                    <div style="margin-top:12px"><button class="add-btn btn-primary"><i class="fa-solid fa-plus"></i> New Goal</button></div>
+                </div>
+                <div class="feature-card">
+                    <h4>Top Priorities</h4>
+                    <p>Limit active high-priority goals to 3 for focus and progress.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Vision Board</h4>
+                    <p>Visual milestones help keep long-term growth on track.</p>
+                </div>
+            </div>
+
+            <div class="goals-container">
+                <div class="bento-card" style="height: auto;">
+                    <div class="card-top">
+                        <h3>Daily Targets</h3>
+                        <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <ul class="goal-list"></ul>
+                </div>
+
+                <div class="progress-section">
+                    <h3 style="margin-bottom: 20px;">Progress Overview</h3>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Full Stack Mastery</span><span id="p1">75%</span></div>
+                        <div class="progress-track"><div class="progress-fill" id="pf1" style="width:75%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Investment Portfolio</span><span id="p2">30%</span></div>
+                        <div class="progress-track"><div class="progress-fill" id="pf2" style="width:30%; background:#EF4444"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Physical Health</span><span id="p3">60%</span></div>
+                        <div class="progress-track"><div class="progress-fill" id="pf3" style="width:60%; background:#10B981"></div></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="home.js"></script>
+</body>
+</html>

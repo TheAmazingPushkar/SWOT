@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resources | SWOT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="app-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-header"><div class="logo"><i class="fa-solid fa-layer-group"></i> <span>SWOT</span></div></div>
+      <nav class="nav-menu">
+        <p class="nav-label">Main</p>
+        <a href="home.html" class="nav-item"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+        <a href="my-swot.html" class="nav-item"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+        <a href="planner.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Planner</a>
+        <a href="focus.html" class="nav-item"><i class="fa-solid fa-hourglass-half"></i> Focus</a>
+        <a href="resources.html" class="nav-item active"><i class="fa-solid fa-book-open"></i> Resources</a>
+        <a href="goals.html" class="nav-item"><i class="fa-solid fa-bullseye"></i> Goals</a>
+        <p class="nav-label">Data</p>
+        <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+        <a href="journal.html" class="nav-item"><i class="fa-solid fa-book"></i> Journal</a>
+        <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title">Resources</h1>
+        <p class="page-subtitle">Curated links, bookmarks and learning paths.</p>
+      </header>
+
+      <div class="hero">
+        <div class="hero-content">
+          <h2>Save and organize what matters</h2>
+          <p>Quickly bookmark articles, videos, and courses. Tag and rate them for later.</p>
+        </div>
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1495433324511-bf8e92934d90?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=123456789" alt="resources"></div>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4>Add Bookmark</h4>
+          <p>Save any URL with tags and a short note.</p>
+          <div style="margin-top:12px"><input id="res-url" class="form-input" placeholder="https://..." /><input id="res-tag" class="form-input" placeholder="tag (e.g., javascript)" style="margin-top:8px"/><button id="res-add" class="btn btn-primary" style="margin-top:8px">Save</button></div>
+        </div>
+        <div class="feature-card">
+          <h4>Learning Paths</h4>
+          <p>Create ordered paths for skills and track completion.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Resource Tags</h4>
+          <p>Filter by topic, difficulty, or type to find resources fast.</p>
+        </div>
+      </div>
+
+      <div class="bento-card" style="margin-top:18px">
+        <div class="card-top"><h3>Saved Resources</h3></div>
+        <ul id="res-list" class="goal-list" style="margin-top:8px;"></ul>
+      </div>
+
+    </main>
+  </div>
+  <script src="home.js"></script>
+</body>
+</html>

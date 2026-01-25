@@ -1,0 +1,200 @@
+/* --- Variables & Reset --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap');
+
+:root {
+    /* Aesthetic Dark Palette */
+    --primary: #6366f1;     /* Vibrant Indigo */
+    --primary-dark: #4f46e5;
+    --secondary: #ec4899;   /* Pink accent */
+    
+    --bg-color: #0f172a;    /* Deep Midnight Slate */
+    --surface: rgba(30, 41, 59, 0.5); /* Slate Card Surface */
+    --surface-hover: rgba(51, 65, 85, 0.8);
+    
+    --text-main: #f8fafc;   /* Soft White */
+    --text-muted: #94a3b8;  /* Muted Blue-Gray */
+    
+    --border: rgba(255, 255, 255, 0.1);
+    --radius: 16px;
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Switched to Inter for a cleaner look */
+}
+
+body {
+    background-color: var(--bg-color);
+    /* Subtle radial glow to make the center pop */
+    background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Glassmorphism Card Style */
+.glass-container {
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+    width: 400px;
+    box-shadow: var(--shadow-xl);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Specific styling for the Landing Page (Index) */
+.landing-container {
+    width: 600px; /* Wider for the main page */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle top highlight */
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -1.5px;
+    /* Aesthetic Gradient Text */
+    background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+p {
+    margin-bottom: 30px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+/* Form Elements */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.6);
+    color: white;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #475569;
+}
+
+input:focus {
+    background: rgba(15, 23, 42, 0.9);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    margin-top: 15px;
+}
+
+.btn-secondary:hover {
+    background: var(--surface-hover);
+    border-color: var(--text-muted);
+}
+
+/* Links */
+.footer-text {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-text a {
+    color: var(--secondary); /* Switched from yellow to pink for aesthetic */
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.footer-text a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Home Page Specifics */
+.dashboard-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+}
+
+/* Custom highlight for specific sections */
+.accent-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--primary);
+    filter: blur(120px);
+    opacity: 0.15;
+    z-index: -1;
+    top: -100px;
+    right: -100px;
+}

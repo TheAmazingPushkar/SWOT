@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Focus | SWOT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="app-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-header"><div class="logo"><i class="fa-solid fa-layer-group"></i> <span>SWOT</span></div></div>
+      <nav class="nav-menu">
+        <p class="nav-label">Main</p>
+        <a href="home.html" class="nav-item"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+        <a href="my-swot.html" class="nav-item"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+        <a href="planner.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Planner</a>
+        <a href="focus.html" class="nav-item active"><i class="fa-solid fa-hourglass-half"></i> Focus</a>
+        <a href="resources.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Resources</a>
+        <a href="goals.html" class="nav-item"><i class="fa-solid fa-bullseye"></i> Goals</a>
+        <p class="nav-label">Data</p>
+        <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+        <a href="journal.html" class="nav-item"><i class="fa-solid fa-book"></i> Journal</a>
+        <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title">Focus Tools</h1>
+        <p class="page-subtitle">Timers, ambient noise and quick focus utilities.</p>
+      </header>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4>Pomodoro Variants</h4>
+          <p>Classic 25/5, 50/10, or custom sessions. Start a session and track productive streaks.</p>
+          <div style="margin-top:10px"><button id="start-25" class="btn btn-primary">Start 25</button> <button id="start-50" class="btn">Start 50</button></div>
+        </div>
+        <div class="feature-card">
+          <h4>Ambient Sounds</h4>
+          <p>Play soft background loops to help concentration.</p>
+          <div style="margin-top:10px"><button class="btn" data-sound="rain">Rain</button> <button class="btn" data-sound="cafe">Cafe</button></div>
+        </div>
+        <div class="feature-card">
+          <h4>Focus Playlist</h4>
+          <p>Quick-access playlist to keep you in the flow.</p>
+        </div>
+      </div>
+
+      <div class="bento-card" style="margin-top:18px">
+        <div class="card-top"><h3>Active Session</h3></div>
+        <div style="display:flex;align-items:center;gap:18px"><div style="font-size:36px;font-weight:800" id="focus-timer">25:00</div><div><button id="focus-start" class="btn btn-primary">Start</button><button id="focus-pause" class="btn">Pause</button></div></div>
+      </div>
+
+    </main>
+  </div>
+  <script src="home.js"></script>
+</body>
+</html>

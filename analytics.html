@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | SWOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header"><div class="logo"><i class="fa-solid fa-layer-group"></i> <span>SWOT</span></div></div>
+            <nav class="nav-menu">
+                <p class="nav-label">Main</p>
+                <a href="home.html" class="nav-item"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+                <a href="my-swot.html" class="nav-item"><i class="fa-solid fa-bolt"></i> My Matrix</a>
+                <a href="planner.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Planner</a>
+                <a href="focus.html" class="nav-item"><i class="fa-solid fa-hourglass-half"></i> Focus</a>
+                <a href="resources.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Resources</a>
+                <a href="goals.html" class="nav-item"><i class="fa-solid fa-bullseye"></i> Goals</a>
+                <p class="nav-label">Data</p>
+                <a href="analytics.html" class="nav-item active"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+                <a href="journal.html" class="nav-item"><i class="fa-solid fa-book"></i> Journal</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title">Life Analytics</h1>
+            </header>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>Understand your growth</h2>
+                    <p>Visualize your focus sessions, goals progress and SWOT balance. Insights help you prioritize the next best action.</p>
+                </div>
+                <div class="hero-image"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8be9e2f4d3b6e1e2e3a3f4d3c2b1f0a7" alt="growth"></div>
+            </div>
+
+            <div class="metric-row">
+                <div class="metric"><div class="value" id="mSessions">0</div><div class="label">Pomodoro Sessions</div></div>
+                <div class="metric"><div class="value" id="mTasks">0</div><div class="label">Completed Tasks</div></div>
+                <div class="metric"><div class="value" id="mScore">0</div><div class="label">Productivity Score</div></div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Weekly Productivity</h4>
+                    <p>See how your workload changes across the week. Aim for consistent blocks of deep work.</p>
+                    <div class="chart-container" style="height:180px;margin-top:12px;"><canvas id="productivityChart"></canvas></div>
+                </div>
+
+                <div class="feature-card">
+                    <h4>SWOT Balance</h4>
+                    <p>Track whether you're spending more time on strengths or opportunities vs. weaknesses and threats.</p>
+                    <div class="chart-container" style="height:180px;margin-top:12px;"><canvas id="swotRadar"></canvas></div>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Actionable Insight</h4>
+                    <p id="insightText">You completed most sessions on Thursday — try scheduling 2 focused blocks on Wednesday.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Productivity Line Chart
+        const ctx1 = document.getElementById('productivityChart');
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Tasks Completed',
+                    data: [5, 8, 3, 12, 6, 9, 4], // This is the dummy data
+                    borderColor: '#4F46E5',
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(79, 70, 229, 0.1)'
+                }]
+            },
+            options: { maintainAspectRatio: false, plugins: { title: { display: true, text: 'Productivity Trend (Last 7 Days)' } } }
+        });
+
+        // SWOT Radar Chart
+        const ctx2 = document.getElementById('swotRadar');
+        new Chart(ctx2, {
+            type: 'radar',
+            data: {
+                labels: ['Strengths', 'Weaknesses', 'Opportunities', 'Threats'],
+                datasets: [{
+                    label: 'Focus Distribution',
+                    data: [8, 5, 9, 4],
+                    backgroundColor: 'rgba(236, 72, 153, 0.2)',
+                    borderColor: '#EC4899',
+                }]
+            },
+            options: { maintainAspectRatio: false }
+        });
+    </script>
+    <script src="home.js"></script>
+</body>
+</html>
