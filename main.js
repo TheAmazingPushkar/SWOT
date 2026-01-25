@@ -2,8 +2,8 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
 // --- CONFIGURATION ---
-const SUPABASE_URL = 'https://gkwgsdbzqbxdiihxaqzw.supabase.co'
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdrd2dzZGJ6cWJ4ZGlpaHhhcXp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4ODUwOTYsImV4cCI6MjA4MTQ2MTA5Nn0.8ObzAC_UsMlqGX1vHJBMTucWq-ebDgg2Yqc3-IlnAGI'
+const SUPABASE_URL = 'https://whrqospobphrijztyptg.supabase.co'
+const SUPABASE_KEY = 'sb_publishable_JDI1sk1Wu1NIAc_nbDIk2w_64oAuV-I'
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 // --- 1. PROTECTED PAGE LOGIC (The Bouncer) ---
@@ -86,4 +86,5 @@ if (logoutBtn) {
     })
 
 }
+
 
