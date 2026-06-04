@@ -17,7 +17,7 @@ SWOT is a clean, multi-page productivity app that helps users plan, reflect, and
 - [Getting Started](#-getting-started)
 - [Project Structure](#-project-structure)
 - [Product Flow](#-product-flow)
-- [Roadmap](#-roadmap)
+
 
 ---
 
@@ -142,15 +142,7 @@ flowchart LR
     C --> I[Resources]
 ```
 
----
 
-## 🧩 Roadmap
-
-- [ ] Add backend persistence for goals, journal, and SWOT matrix
-- [ ] Improve role-based settings and profile controls
-- [ ] Add richer charts and historical trend analysis
-- [ ] Introduce export/import improvements and sharing
-- [ ] Add automated tests and CI checks
 
 ---
 
